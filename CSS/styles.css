@@ -1,0 +1,40 @@
+/* *{
+    text-align: center;
+
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+}
+@keyframes fadein{
+    from{
+        background-color: black;
+    }
+    
+    100%{
+        background-color: none;
+    }
+    
+} */
+body{
+    background-color: whitesmoke;
+}
+h1{
+    text-align: center;
+    
+}
+p{
+    text-align: left;
+}
+input{
+    border-top-style: hidden;
+    border-bottom-style: hidden;
+    border-left-style: dotted;
+    border-right-style: hidden;
+    background-color: rgba(1, 1, 1, 0);
+}
+.time{
+    text-align: right;
+}
+
