@@ -24,9 +24,6 @@ h1{
     text-align: center;
     
 }
-p{
-    text-align: left;
-}
 input{
     border-top-style: hidden;
     border-bottom-style: hidden;
@@ -34,7 +31,11 @@ input{
     border-right-style: hidden;
     background-color: rgba(1, 1, 1, 0);
 }
-.time{
+.timer{
     text-align: right;
+}
+input{
+    width: 70%;
+    height: 70%;
 }
 

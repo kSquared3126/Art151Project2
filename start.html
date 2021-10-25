@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <style>
-    body{
-  background-image: url("media/windowsbg.jpg" ); /* make new screenshot of empty desktop */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; 
-    }
-    h1{
-        text-align: center;
-    }
-    p{
-        text-align: right;
-    }
-    .icon{
-    width: 20%;
-    height: 20%;
-    display: block;
-    }
-
+        body{
+            background-image: url("media/windowsbg.jpg" ); /* make new screenshot of empty desktop */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; 
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            text-align: right;
+        }
+        .icon{
+        width: 20%;
+        height: 20%;
+        display: block;
+        }
+        .timer{
+            text-align: right;
+        }
     </style>
 
-    <link rel="stylesheet" href="styles.css"> 
 
     <title>Windows</title>
 </head>
@@ -34,10 +34,27 @@
     <h1>Open Microsoft Word</h1>
 
     <a href="word1.html" class="icon" ><img src="media/msword.png" class="icon"></a>
-    <a href="word1.html" class="icon"><img src="media/chromeicon.png" class="icon"></a>
-    <a href="word1.html" class="icon"><img src="media/leagueicon.png" class="icon"></a>
+    <a href="google.html" class="icon"><img src="media/chromeicon.png" class="icon"></a>
+    <a href="league.html" class="icon"><img src="media/leagueicon.png" class="icon"></a>
     
-    
-    <script src ="js/counter.js"></script>
+    <script>
+        tick = localStorage.getItem('countdown');
+        tickint=parseInt(tick);
+        let tickstring = tickint.toString();
+        
+        function timeout(){
+            setTimeout(function(){
+                document.getElementById('timer').textContent = tickint;
+                console.log('counter = ' + tickint--);;
+                if(tickint < 0 ){  
+                    window.location.replace('lose.html');;
+                }
+                localStorage.setItem('countdown', tickint);
+                console.log('localstorage ' + localStorage.getItem('countdown'))
+                timeout();
+         }, 1000);
+        }
+        timeout();
+    </script>
 </body>
 </html>

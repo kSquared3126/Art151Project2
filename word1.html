@@ -4,21 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+        h1{
+            text-align: center;
+        }
+        .right{
+            text-align: right;
+        }
+    </style>
 
-    <link rel="stylesheet" href="css/styles.css">
 
-    <title>Document</title>
+    <title>Microsoft Word</title>
 </head>
 <body>
-    <p class="time">Timer</p>
+    <p class="right" id="timer">Timer</p>
+    <h1>Answer the Prompt</h1>
     <img src="media/mswordtop.png" width="100%">
     <form>
-        <p>"What are your thoughts on modern day late stage capitalism and why will kill everything that you hold dear and end what civilization as we know it?"</p>
-        <input type="text">
-
-
+        <p>In 100 or more words: </p><br>
+        <p>"What are your thoughts on modern day late stage capitalism and why will kill everything that you hold dear and end what civilization as we know it?"</p><br>
+        <textarea id='word' rows="30" cols="200">Type Here</textarea>
     </form>
+    <p>
+        Word Count:
+        <span id="show">0</span>
+      </p>
+      
+
+<button><a href="turnin.html">Turn In</a></button>
     
-    <script src ="js/counter.js"></script>
+    <script src ="js/crash.js"></script>
+    <script>
+        tick = localStorage.getItem('countdown');
+        tickint=parseInt(tick);
+        let tickstring = tickint.toString();
+        let luck = Math.floor(Math.random() * 300); 
+        console.log(luck);
+        
+        function timeout(){
+            setTimeout(function(){
+                document.getElementById('timer').textContent = tickint;
+                console.log('counter = ' + tickint--);
+                if(tickint < 0 ){  
+                    window.location.replace('lose.html');
+                }
+                if(tickint == luck){
+                    window.location.replace('crash.html');
+                }
+                localStorage.setItem('countdown', tickint);
+                console.log('localstorage ' + localStorage.getItem('countdown'))
+                timeout();
+         }, 1000);
+        }
+        timeout();
+    </script>
+
+<script>
+    document
+      .querySelector("#word")
+      .addEventListener("input", function countWord() {
+        let res = [];
+        let str = this.value.replace(/[\t\n\r\.\?\!]/gm, " ").split(" ");
+        str.map((s) => {
+          let trimStr = s.trim();
+          if (trimStr.length > 0) {
+            res.push(trimStr);
+          }
+        });  
+        document.querySelector("#show").innerText = res.length;
+        let count = document.getElementById('show').textContent;
+        localStorage.setItem('words', count);
+        console.log(localStorage.getItem('words'));
+      });
+  </script>
+
 </body>
 </html>

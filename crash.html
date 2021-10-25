@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+            background-color: whitesmoke;
+        }
+    </style>
+    <title>Crash</title>
+</head>
+<body>
+    <h1>MS Word Has Crashed</h1>
+    <p>Microsoft Word is not Responding</p>
+    <button id="butt1"><a href="word1.html">--> Restart the Program</a></button><br>
+    <button id="butt"><a href="start.html">--> Close the Program</a></button><br>
+    <button><a>--> Wait for the Program to Respond</a></button><br>
+
+    <script>
+        let tick = localStorage.getItem('countdown');
+        let tickint=parseInt(tick);
+        var x= document.getElementById("butt1");
+        var y= document.getElementById("butt2");
+        x.addEventListener("click", func(1));
+        y.addEventListener("click", func(2));
+        function func(z){
+            if(z==1){
+                let newtick = tickint * .66;
+                let tickstring = newtick.toString();
+                localStorage.setItem('countdown', tickstring);
+            }
+            else{
+                let newtick = tickint * .5;
+                let tickstring = newtick.toString();
+                localStorage.setItem('countdown', tickstring);
+            }
+        }
+    </script>
+</body>
+</html>

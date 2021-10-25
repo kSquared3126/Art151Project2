@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Turn In</title>
+</head>
+<body>
+    <p id='timer'>Timer</p>
+    <h1>Turn In the Correct Word Document</h1>
+    <img src="media/submit.png" width="100%" height=30%>
+    <form>
+        <label for="docs">Choose a document: </label>
+        <select name="documents" id="documents">
+            <option id='choice' value="wrong">doc1</option>
+            <option id='choice' value="wrong">doc2</option>
+            <option id='choice' value="wrong">qwerty</option>
+            <option id='choice' value="wrong">asdf</option>
+            <option id='choice' value="right">Assignment</option>
+            <option id='choice' value="wrong">idkhowtonamedocuments</option>
+            <option id='choice' value="wrong">doc3</option>
+        </select><br>
+    </form>
+    <button><a id='link' href="">Turn In</a></button>
+
+    <script>
+        tick = localStorage.getItem('countdown');
+        tickint=parseInt(tick);
+        let tickstring = tickint.toString();
+        
+        function timeout(){
+            setTimeout(function(){
+                document.getElementById('timer').textContent = tickint;
+                console.log('counter = ' + tickint--);;
+                if(tickint < 0 ){  
+                    window.location.replace('lose.html');;
+                }
+                localStorage.setItem('countdown', tickint);
+                console.log('localstorage ' + localStorage.getItem('countdown'))
+                timeout();
+         }, 1000);
+        }
+        timeout();
+    </script>
+
+    <script>
+        let wordcountstring = localStorage.getItem('words');
+        let wordcountint = parseInt(wordcountstring);
+        function check(){
+            x= document.getElementById("documents");
+            setTimeout(function(){
+                if(x.value === "right" && wordcountint >= 100){
+                let link = document.getElementById('link');
+                let showLink = link.getAttribute('href');
+                link.setAttribute('href', 'win.html');
+            }
+            else{
+                let link = document.getElementById('link');
+                let showLink = link.getAttribute('href');
+                link.setAttribute('href', 'lose.html');
+            }
+            check();
+            }, 1000);
+        }
+        check();
+    </script>
+</body>
+</html>

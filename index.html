@@ -7,15 +7,17 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Text Based Game</title>
+    <title>Due 11:59</title>
 </head>
 <body>
-    <h1 id="headerOne">Game Name</h1>
-    <p>[basic premise behind game]</p>  <br>
-    <p>[basic mechanics, controls, etc.]</p>    <br>
-    <p>[Somehow enter name]</p> <br>
-    <button onclick="sessionStorage.setItem('tick','1000')"><a href="start.html" id="begin">Press here to start</a></button>
-
+    <h1 id="headerOne">Due 11:59</h1>
+    <p>You're a student with a major assignment due soon. Finish the assignment and get a good grade. Or Don't. It's up to you. </p>
+    <button><a href="start.html" id="begin">Press here to start</a></button>
+    <script>
+        let tick = 300;
+        let tickstring = tick.toString();
+        localStorage.setItem('countdown', tickstring);
+    </script>
 
 </body>
 </html>
