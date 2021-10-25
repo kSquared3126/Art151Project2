@@ -39,7 +39,7 @@
         tick = localStorage.getItem('countdown');
         tickint=parseInt(tick);
         let tickstring = tickint.toString();
-        let luck = Math.floor(Math.random() * 300); 
+        let luck = Math.floor(Math.random() * tickint); 
         console.log(luck);
         
         function timeout(){
