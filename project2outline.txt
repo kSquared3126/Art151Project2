@@ -1,0 +1,26 @@
+Ideas for project 2 [Text based game]:
+__________________________________________________________________
+>recreate opening document and typing a paper and turning it in on time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>opening google docs
+>type heading; ie name, class, date
+
+can open open chrome, league, etc. and depending on what you open more time on the countdown is used up (implement after it works properly)
+>league
+	-fade to black then fade to defeat screen
+>chrome
+	-go to youtube and choose video to watch; etc.
+	>fade to black then fade to screen saying how much time is left before paper is due
+>create a timer in corner saying time left
+>make user "type" paper 
+>open blackboard and submit before time limit
+>if not in on time, get failing grade; if in on time, get passing grade
+>random negative events
+	-ms word can crash
+	-computer blows up [rare ending]?
+
+
+ideas for the essay prompt: "What are your thoughts on modern day late stage capitalism and why will kill everything that you hold dear and end what civilization as we know it?"
+
+
+
